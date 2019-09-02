@@ -1,0 +1,91 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static '' %}" type="image/png">
+        <title>eChecker</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/vendors/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/vendors/owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/vendors/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/vendors/nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/vendors/animate-css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/vendors/popup/magnific-popup.css' %}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/responsive.css' %}">
+        <script src="https://widget.northeurope.cloudapp.azure.com:9443/v0.1.0/mobile-money-widget-mtn.js"></script>
+    </head>
+    <body data-spy="scroll" data-target="#mainNav" data-offset="70">
+
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu" id="mainNav">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="{% url 'blog-home' %}" style="color: white"><img src="{% static '' %}" alt="Brand Name"></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								<li class="nav-item active"><a class="nav-link" href="{% url 'blog-home' %}">HOME</a></li>
+								<li class="nav-item"><a class="nav-link" href="#service">SERVICES</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+							</ul>
+						</div>
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+
+        {% block content %}
+        {% endblock content %}
+        <!--================ start footer Area  =================-->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 pt-3">
+                        <p class="footer-text">Brand Name</p>
+                    </div>
+                    <div class="col-4 pt-3">
+                        <p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> eChecker</p>
+                    </div>
+                    <div class="col-4 pt-3">
+                        <p class="footer-text"><a class="pr-3" href="{% url 'blog-home' %}" style="color: white">Home</a><a href="#service" style="color: white">Services</a> </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+		<!--================ End footer Area  =================-->
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'blog/js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'blog/js/popper.js' %}"></script>
+        <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'blog/js/stellar.js' %}"></script>
+        <script src="{% static 'blog/vendors/lightbox/simpleLightbox.min.js' %}"></script>
+        <script src="{% static 'blog/vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'blog/vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'blog/vendors/isotope/isotope-min.js' %}"></script>
+        <script src="{% static 'blog/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'blog/js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'blog/vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'blog/vendors/counter-up/jquery.counterup.js' %}"></script>
+        <script src="{% static 'blog/js/mail-script.js' %}"></script>
+        <script src="{% static 'blog/vendors/popup/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'blog/js/theme.js' %}"></script>
+    </body>
+</html>

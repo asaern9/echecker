@@ -1,0 +1,154 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+        <section class="home_banner_area" id="home">
+            <div class="banner_inner">
+				<div class="container">
+					<div class="row banner_content">
+						<div class="col-lg-6">
+							<h3>Online examination <br />checker card Available</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit rhoncus elit, ac auctor velit vehicula eu. Nam volutpat volutpat magna..</p>
+							<a class="banner_btn" href="{% url 'blog-order-checker' %}">Buy Now!</a>
+						</div>
+						<div class="col-lg-6" id="optionalstuff">
+                            <div id="demo" class="carousel slide" data-ride="carousel">
+                              <ul class="carousel-indicators">
+                                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                <li data-target="#demo" data-slide-to="1"></li>
+                                <li data-target="#demo" data-slide-to="2"></li>
+                              </ul>
+                              <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                  <img src="{% static 'blog/img/wassce2.jpg' %}" alt="" width="1000" height="300">
+                                  <div class="carousel-caption">
+
+                                  </div>
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="{% static 'blog/img/waec_ghana_ICTCatalogue.jpg' %}" alt="" width="1000" height="300">
+                                  <div class="carousel-caption">
+                                  </div>
+                                </div>
+                                <div class="carousel-item">
+                                  <img src="{% static 'blog/img/wassce-2019-results.jpg' %}" alt="" width="1000" height="300">
+                                  <div class="carousel-caption">
+                                  </div>
+                                </div>
+                              </div>
+                              <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                              </a>
+                              <a class="carousel-control-next" href="#demo" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                              </a>
+                            </div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================Feature Area =================-->
+        <section class="feature_area p_120" id="service">
+        	<div class="container">
+        		<div class="feature_inner row">
+        			<div class="col-lg-3 col-md-6">
+        				<div class="feature_item">
+        					<img src="{% static 'blog/img/icon/waec-logo.png' %}" alt="">
+        					<h4>Checker 1</h4>
+        					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit rhoncus elit, ac auctor velit vehicula eu. Nam volutpat volutpat magna..</p>
+                            <a href="{% url 'blog-order-checker' %}" class="genric-btn success circle">Buy checker</a>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-md-6">
+        				<div class="feature_item">
+        					<img src="{% static 'blog/img/icon/waec-logo.png' %}" alt="">
+        					<h4>Checker 2</h4>
+        					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit rhoncus elit, ac auctor velit vehicula eu. Nam volutpat volutpat magna..</p>
+                            <a href="{% url 'blog-order-checker' %}" class="genric-btn success circle">Buy checker</a>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-md-6">
+        				<div class="feature_item">
+        					<img src="{% static 'blog/img/icon/waec-logo.png' %}" alt="">
+        					<h4>Checker 3</h4>
+        					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit rhoncus elit, ac auctor velit vehicula eu. Nam volutpat volutpat magna..</p>
+                            <a href="{% url 'blog-order-checker' %}" class="genric-btn success circle">Buy checker</a>
+        				</div>
+        			</div>
+        			<div class="col-lg-3 col-md-6">
+        				<div class="feature_item">
+        					<img src="{% static 'blog/img/icon/waec-logo.png' %}" alt="">
+        					<h4>Checker 4</h4>
+        					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit rhoncus elit, ac auctor velit vehicula eu. Nam volutpat volutpat magna..</p>
+                            <a href="{% url 'blog-order-checker' %}" class="genric-btn success circle">Buy checker</a>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+
+        <!--================Contact Area =================-->
+        <section class="contact_area pb-5" id="contact">
+            <div class="container">
+                <h3 class="text-center pb-3" style="font-weight: bold">Contact Us</h3>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>Legon, Ghana</h6>
+                                <p>University of Ghana</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6><a href="#">00 (440) 9865 562</a></h6>
+                                <p>Mon to Fri 9am to 6 pm</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a href="#">infor.echecker@gmail.com</a></h6>
+                                <p>Send us your message anytime!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                        {% endif %}
+                        <form class="row contact_form"  method="POST" id="contactForm" novalidate="novalidate">
+                            {% csrf_token %}
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.name }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form.email }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form.subject }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form.message }}
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="submit" value="submit" class="genric-btn success circle" style="font-size: 14px">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock content %}
+
+<div class="banner_map_img">
+								<img class="img-fluid" src="{% static 'blog/img/banner/right-mobile.png' %}" alt="">
+							</div>
